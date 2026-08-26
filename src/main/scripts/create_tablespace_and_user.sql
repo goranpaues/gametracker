@@ -22,7 +22,7 @@ EXCEPTION
 END;
 /
 
--- Create doag2016 user
+-- Create user:
 DECLARE
   v_id DBA_USERS.USER_ID%TYPE;
 BEGIN
