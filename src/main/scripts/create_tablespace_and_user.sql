@@ -1,8 +1,5 @@
 -- Change to PDB which was created inside parent iamge
-ALTER SESSION SET CONTAINER = ORCLPDB1;
-
--- Enable Enterprise Manager Express on port 5501
-EXEC dbms_xdb_config.sethttpsport(5501);
+ALTER SESSION SET CONTAINER = FREEPDB1;
 
 -- Create table space for demo application
 DECLARE
@@ -13,7 +10,7 @@ EXCEPTION
   WHEN no_data_found THEN
     EXECUTE IMMEDIATE
       'CREATE SMALLFILE TABLESPACE "GAMETRACKER" ' ||
-      '  DATAFILE ''/opt/oracle/oradata/ORCLCDB/ORCLPDB1/gametracker-1.dbf'' SIZE 512M AUTOEXTEND ON NEXT 128M MAXSIZE 1024M ' ||
+      '  DATAFILE ''/opt/oracle/oradata/FREE/FREEPDB1/gametracker-1.dbf'' SIZE 16M AUTOEXTEND ON NEXT 16M MAXSIZE 1024M ' ||
       '  LOGGING ' ||
       '  DEFAULT NOCOMPRESS ' ||
       '  ONLINE ' ||

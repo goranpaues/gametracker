@@ -18,7 +18,7 @@ Make sure that you look at the commits, as they are very thorough and educationa
  
 ## Creating and running the demo database
 
-Oracle 12c EE is used in the demo to explore the new JSON functionality. Here are some instructions to get a local instance up and running:
+Oracle 26i is used to explore the JSON to Relational duality feature for importing games!
 
 1. Go to [docker.com](http://www.docker.com/products/docker) and install docker on your machine
 2. Download [Oracle Database 12c Release 2 Standard Edition 2 for Linux](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html). You will need an Oracle account to download the database and you also need to accept the licensing agreement.
@@ -28,14 +28,13 @@ Oracle 12c EE is used in the demo to explore the new JSON functionality. Here ar
 
 You can access the Enterprise manager express for the root container at [https://localhost:5500/em](https://localhost:5500/em) and the container ORCLPDB1 at [https://localhost:5501/em](https://localhost:5501/em). The admin password is a password generated during first startup and you can find it inside the container logs.
 
-To interact with the database you can use [SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/).
-Then log in with the following details:
+Log in with your favourite client using the following details:
 ```
 Username: gametracker
 Password: gametracker
 Hostname: localhost
 Port: 1521
-Service name: ORCLPDB1
+Service name: FREEPDB1
 ```
 You can also use SQLcl to interact with the database, [download it here](http://www.oracle.com/technetwork/developer-tools/sqlcl/overview/)
 (you need Java on your machine).
