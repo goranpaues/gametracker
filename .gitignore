@@ -23,6 +23,18 @@ dist/
 nbdist/
 .nb-gradle/
 
-
 ### Oracle Local DB ###
 src/main/oracle-volume/
+
+### utPLSQL installation ###
+src/main/utPLSQL/
+src/main/*.log
+
+### sqlcl installation ###
+src/main/sqlcl/
+
+### Downloaded ZIP files ###
+src/main/*.zip
+
+### Local Agent Workbench ###
+workbench/
