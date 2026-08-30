@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.Properties;
 
 @SpringBootApplication
-public class GameTrackerApplication {
+public class GametrackerApplication {
 
 	// Get PORT and HOST from Environment or set default
 	public static final Optional host;
@@ -24,7 +24,7 @@ public class GameTrackerApplication {
 		myProps.setProperty("server.address", (String) host.orElse("localhost"));
 		myProps.setProperty("server.port", (String) port.orElse("8080"));
 
-		SpringApplication app = new SpringApplication(GameTrackerApplication.class);
+		SpringApplication app = new SpringApplication(GametrackerApplication.class);
 		app.setDefaultProperties(myProps);
 		app.run(args);
 
