@@ -23,7 +23,7 @@
 		<java.version>1.8</java.version>
 		<flyway.version>4.1.2</flyway.version>
     <oracle.version>21.18.0.0</oracle.version>
-		<db.url>jdbc:oracle:thin:@//localhost:1521/FREEPDB1</db.url>
+		<db.url>jdbc:oracle:thin:@//localhost:1523/FREEPDB1</db.url>
 		<db.username>gametracker</db.username>
 		<db.password>gametracker</db.password>
 		<db.schema>GAMETRACKER</db.schema>
@@ -102,38 +102,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>io.fabric8</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.17.1</version>
-				<configuration>
-					<images>
-						<image>
-							<name>oracle/database:12.2.0.1-ee</name>
-							<run>
-								<volumes>
-									<bind>
-										<volume>${project.build.scriptSourceDirectory}:/var/tmp/scripts</volume>
-										<volume>${basedir}/var/oradata:/opt/oracle/oradata</volume>
-									</bind>
-								</volumes>
-								<ports>
-									<port>1521:1521</port>
-									<port>5500:5500</port>
-									<port>5501:5501</port>
-								</ports>
-								<wait>
-									<log>DATABASE IS READY TO USE!</log>
-									<time>3600000</time>
-									<exec>
-										<postStart>/var/tmp/scripts/initdb.sh</postStart>
-									</exec>
-								</wait>
-							</run>
-						</image>
-					</images>
-				</configuration>
 			</plugin>
 		</plugins>
 		<resources>
