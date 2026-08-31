@@ -26,8 +26,8 @@ fi
 echo "[3] Start Container:"
 
 
-docker run --name oracledb-slim \
-          -p 1521:1521 \
+docker run --name oracledb-manual \
+          -p 1522:1521 \
           -e ORACLE_PASSWORD="tdsys" \
           -v `pwd -W`/oracle-volume:/opt/oracle/oradata \
           -v `pwd -W`/scripts:/container-entrypoint-initdb.d \

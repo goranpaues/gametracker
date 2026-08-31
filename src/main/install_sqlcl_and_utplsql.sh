@@ -17,4 +17,4 @@ curl -Lk "${UTPLSQL_DOWNLOAD_URL}" -o utPLSQL.zip
 unzip -q utPLSQL.zip
 
 echo "Starting installation of utPLSQL..."
-./sqlcl/bin/sql -s sys/SystemSYS123456#@localhost:1521/FREEPDB1 as sysdba @utPLSQL/source/install_headless.sql utplsql utplsql gametracker
+./sqlcl/bin/sql -s sys/SystemSYS123456#@localhost:1522/FREEPDB1 as sysdba @utPLSQL/source/install_headless.sql utplsql utplsql gametracker
