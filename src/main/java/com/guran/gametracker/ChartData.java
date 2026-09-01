@@ -4,32 +4,32 @@ package com.guran.gametracker;
  * Created by goranpaues on 2017-04-23.
  */
 public class ChartData {
-    private String label;
-    private String value;
+    private String category;
+    private String amount;
 
     public ChartData() {
         super();
-        this.label = "";
-        this.value = "";
+        this.category = "";
+        this.amount = "";
     }
 
-    public ChartData(String label, String value) {
-        this.label = label;
-        this.value = value;
+    public ChartData(String category, String amount) {
+        this.category = category;
+        this.amount = amount;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "ChartData[label='%s', value=%s]",
-                label, value);
+                "ChartData[category='%s', amount=%s]",
+                category, amount);
     }
 
-    public String getLabel() {
-        return this.label;
+    public String getCategory() {
+        return this.category;
     }
 
-    public String getValue() {
-        return this.value;
+    public String getAmount() {
+        return this.amount;
     }
 }

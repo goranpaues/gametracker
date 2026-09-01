@@ -12,59 +12,112 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/css/demo.css" rel="stylesheet" />
 
-        <script type="text/javascript" src="/fusioncharts/fusioncharts.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
         <script type="text/javascript" src="/js/jquery-2.2.2.min.js"></script>
         <script type="text/javascript">
             $(function(){
+                var sharedPalette = ['#0075c2', '#1aaf5d', '#f2c500', '#f45b00', '#8e0000', '#845EC2', '#2C73D2', '#008E9B'];
 
-                $.getJSON('/platform', function(data) {
-                    var platformChart = new FusionCharts({
-                        type: "pie2d",//type of the chart to be rendered
-                        id: "platform-chart",//id of the chart - required to refer to the chart
-                        width: "300",//width of the chart
-                        height: "300",//height of the chart
-                        renderAt: "platformChartContainer",//id of the HTML element where the chart is rendered
-                        dataFormat: "json", //format of the data passed to the dataSource property
+                var toLabels = function(chartData) {
+                    return chartData.map(function(point) {
+                        return point.category;
+                    });
+                };
 
-                        //chart appearance properties are defined within dataSource.
-                        dataSource: {
-                        "chart":{
-                            "caption":"Games played per platform",
-                            "bgColor":"EEEEEE,CCCCCC",
-                            "bgAlpha":"70,80",
-                            "bgratio":"60,40",
-                            "paletteColors":"#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
-                            "baseFontSize": "14",
-                            "use3DLighting":"1",
-                            "borderColor":"#EEEEEE",
-                            "borderThickness":"3",
-                            "enableSmartLabels":"1",
-                            "skipOverlapLabels":"0"
-                            },"data": data
+                var toValues = function(chartData) {
+                    return chartData.map(function(point) {
+                        return Number(point.amount);
+                    });
+                };
+
+                var buildDatasetColors = function(size) {
+                    var colors = [];
+                    for (var i = 0; i < size; i++) {
+                        colors.push(sharedPalette[i % sharedPalette.length]);
+                    }
+                    return colors;
+                };
+
+                var renderPlatformChart = function(data) {
+                    new Chart($('#platformChartCanvas')[0], {
+                        type: 'bar',
+                        data: {
+                            labels: toLabels(data),
+                            datasets: [{
+                                label: 'Games',
+                                data: toValues(data),
+                                backgroundColor: buildDatasetColors(data.length)
+                            }]
                         },
-                    });
-                    platformChart.render();
-                });
-
-               $.getJSON('/lastyear', function(data) {
-                    var lastyearChart = new FusionCharts({
-                        type: 'column2d',
-                        renderAt: 'lastyearChartContainer',
-                        width: '400',
-                        height: '300',
-                        dataFormat: 'json',
-                        dataSource: {
-                            "chart": {
-                                "caption": "Games played last twelve months",
-                                "xaxisname": "Month",
-                                "yaxisname": "Games played",
-                                "showvalues": "1",
-                                "animation": "1"
-                            },"data": data
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Games played per platform'
+                                },
+                                legend: {
+                                    display: false
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
                             }
-                        });
-                    lastyearChart.render();
+                        }
                     });
+                };
+
+                var renderRatingChart = function(data) {
+                    new Chart($('#ratingChartCanvas')[0], {
+                        type: 'doughnut',
+                        data: {
+                            labels: toLabels(data).map(function(label) { return 'Rating ' + label; }),
+                            datasets: [{
+                                label: 'Games',
+                                data: toValues(data),
+                                backgroundColor: buildDatasetColors(data.length)
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Games by rating'
+                                }
+                            }
+                        }
+                    });
+                };
+
+                var renderShelfChart = function(data) {
+                    new Chart($('#shelfChartCanvas')[0], {
+                        type: 'polarArea',
+                        data: {
+                            labels: toLabels(data),
+                            datasets: [{
+                                label: 'Games',
+                                data: toValues(data),
+                                backgroundColor: buildDatasetColors(data.length)
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Games by shelf'
+                                }
+                            }
+                        }
+                    });
+                };
+
+                $.getJSON('/platform', renderPlatformChart);
+                $.getJSON('/ratings', renderRatingChart);
+                $.getJSON('/shelves', renderShelfChart);
                 });
         </script>
         </head>
@@ -88,13 +141,18 @@
 
                 <div class="col-lg-6">
                     <div class="col-lg-12">
-                        <div id="platformChartContainer">The platform chart will load here!</div>
+                        <canvas id="platformChartCanvas" width="400" height="300">The platform chart will load here!</canvas>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="col-lg-12">
-                            <div id="lastyearChartContainer">The last year chart will load here!</div>
+                            <canvas id="ratingChartCanvas" width="400" height="300">The rating chart will load here!</canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="col-lg-12">
+                            <canvas id="shelfChartCanvas" width="400" height="300">The shelf chart will load here!</canvas>
                         </div>
                     </div>
                 </div>
