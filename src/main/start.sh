@@ -26,7 +26,7 @@ fi
 echo "[3] Start Container:"
 
 
-docker run --name oracledb-start \
+docker run --name oracledb-master \
           -p 1521:1521 \
           -e ORACLE_PASSWORD="tdsys" \
           -v `pwd -W`/oracle-volume:/opt/oracle/oradata \
