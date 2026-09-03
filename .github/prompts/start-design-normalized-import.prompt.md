@@ -33,10 +33,10 @@ Exclude:
 
 ## Execution order (explicit workspace agents)
 Explicitly invoke these workspace agents from `.github/agents/` in this exact order:
-1. `oracle-analyst` produces candidate files in `workbench/candidate/`.
-2. `oracle-test-designer` produces `workbench/tests/` utPLSQL package and test matrix.
-3. `oracle-harness` validates and writes `workbench/validation-report.md`.
-4. `oracle-loop` repairs and reruns until PASS or max 8 retries.
+1. `analyst` produces candidate files in `workbench/candidate/`.
+2. `test-designer` produces `workbench/tests/` utPLSQL package and test matrix.
+3. `validator` validates and writes `workbench/validation-report.md`.
+4. `loop` repairs and reruns until PASS or max 8 retries.
 5. Produce `workbench/final-report.md`.
 
 ## Acceptance

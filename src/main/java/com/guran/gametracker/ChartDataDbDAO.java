@@ -21,7 +21,7 @@ public class ChartDataDbDAO implements ChartDataDAO{
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 resultList.add(
-                        new ChartData(rs.getString("label"), rs.getString("value")));
+                        new ChartData(rs.getString("category"), rs.getString("amount")));
             }
         } catch (SQLException e) {
             System.out.println("SQL Query Error: " + e.getMessage());
@@ -33,7 +33,7 @@ public class ChartDataDbDAO implements ChartDataDAO{
 
     @Override
     public List<ChartData> getPlatformChart(){
-        String queryStr = "select p.name as label, count(*) as value from\n" +
+        String queryStr = "select p.name as category, count(*) as amount from\n" +
                                 "platforms p\n" +
                                 "join platform_list pl on pl.platform_id = p.id\n" +
                                 "join games g on g.id = pl.game_id\n" +
@@ -44,24 +44,34 @@ public class ChartDataDbDAO implements ChartDataDAO{
                                 "                         where s.name = 'Backlog')\n" +
                                 "group by p.name\n" +
                                 "having count(*) > 10\n" +
-                                "order by count(*)";
+                                "order by count(*) desc";
         List<ChartData> resultList = this.query(queryStr);
         return resultList;
     }
 
 
     @Override
-    public List<ChartData> getLastYearChart(){
-        String queryStr = "select \n" +
-                                "to_char(trunc(date_added,'MONTH'),'yyyymm') label, \n" +
-                                "nvl(count(1),0) value \n" +
+    public List<ChartData> getRatingChart(){
+        String queryStr = "select\n" +
+                                "to_char(g.rating) as category,\n" +
+                                "count(*) as amount\n" +
                                 "from games g\n" +
-                                "join shelf_list sl on sl.game_id = g.id\n" +
-                                "join shelves s on s.id = sl.shelf_id\n" +
-                                "where s.name = 'Played'\n" +
-                                "and sl.date_added > trunc(sysdate,'MONTH')-365\n" +
-                                "group by trunc(date_added,'MONTH') \n" +
-                                "order by label";
+                                "where g.rating is not null\n" +
+                                "group by g.rating\n" +
+                                "order by g.rating desc";
+        List<ChartData> resultList = this.query(queryStr);
+        return resultList;
+    }
+
+    @Override
+    public List<ChartData> getShelfChart(){
+        String queryStr = "select\n" +
+                                "s.name as category,\n" +
+                                "count(*) as amount\n" +
+                                "from shelves s\n" +
+                                "join shelf_list sl on sl.shelf_id = s.id\n" +
+                                "group by s.name\n" +
+                                "order by count(*) desc";
         List<ChartData> resultList = this.query(queryStr);
         return resultList;
     }

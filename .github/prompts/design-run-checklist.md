@@ -6,10 +6,10 @@
 4. Confirm SQLcl MCP server is available in tools and `gametracker-harness-copilot@local` is configured.
 5. Open and run prompt from [start-design-normalized-import.prompt.md](C:/Users/GöranPaues/git/gametracker/.github/prompts/start-design-normalized-import.prompt.md).
 6. Ensure the loop runs in this order:
-   - Oracle Analyst
-   - Oracle Test Designer
-   - Oracle Harness
-   - Oracle Loop repair/retry (up to 8 times)
+   - Analyst
+   - Test Designer
+   - Validator
+   - Loop repair/retry (up to 8 times)
 7. After each loop iteration, check:
    - `workbench/validation-report.md`
    - `workbench/final-report.md` (on completion)
