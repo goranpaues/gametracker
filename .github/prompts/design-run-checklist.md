@@ -24,7 +24,8 @@
    - utPLSQL suite pass (`S10`)
 10. Run utPLSQL suite:
    - compile/install generated test package from `workbench/tests/test_oracle_design_import.pks` and `workbench/tests/test_oracle_design_import.pkb`
-   - execute `ut.run('test_oracle_design_import');`
+   - clear `GAMETRACKER.TEST_ORACLE_DESIGN_IMPORT_OUTPUT` before running tests
+   - execute `workbench/tests/run_test_oracle_design_import.sql`, which stores only the latest run
 11. Choose the best solution using this order:
     - PASS on all sensors S1..S10
     - no mapping/annotation/changeset violations

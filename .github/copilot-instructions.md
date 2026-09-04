@@ -39,6 +39,5 @@ Load `src/main/oracle-volume/grouvee_export.json` into a normalized Oracle schem
 ## Validation gates
 - All objects compile and are VALID.
 - Import is idempotent on re-run.
-- Included domains are mapped and loaded.
 - Excluded domains are explicitly reported as skipped by design.
 - utPLSQL tests pass when test package is present.

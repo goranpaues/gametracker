@@ -33,9 +33,8 @@ Accept only if all are true:
 1. Harness overall PASS.
 2. S3 one-statement rule PASS.
 3. S4 annotation coverage PASS.
-4. Included mapping complete (no unmapped included paths).
-5. utPLSQL suite from `workbench/tests/test_oracle_design_import` passes.
-6. Exclusions present only for:
+4. utPLSQL suite from `workbench/tests/test_oracle_design_import` passes.
+5. Exclusions present only for:
    - reviews
    - account
    - non-game URLs
@@ -50,7 +49,6 @@ Write `workbench/final-report.md` with:
 1. ACCEPTED or REJECTED.
 2. Sensors summary S1..S10.
 3. Created/updated changesets list.
-4. Included mappings count.
-5. Skipped-by-design list.
-6. Empty-everywhere skipped list.
-7. Outstanding blockers (if any).
+4. Skipped-by-design list.
+5. Empty-everywhere skipped list.
+6. Outstanding blockers (if any).

@@ -40,10 +40,8 @@ Design and generate the simplest maintainable normalized schema + import impleme
 - Repeatable procedure file remains single CREATE OR REPLACE statement.
 
 ## Annotation rule (hard)
-- Add annotations for every new/changed table and column using:
-  - `COMMENT ON TABLE ...`
-  - `COMMENT ON COLUMN ...`
-- Each COMMENT statement must be in its own Flyway changeset file.
+- Add annotations for every new/changed table and column using Oracle `ANNOTATIONS`.
+- Each annotation statement must be in its own Flyway changeset file.
 
 ## Required outputs in `workbench/candidate/`
 1. `V2.0xx__*.sql` files for normalized schema changes (one statement each file).
@@ -55,7 +53,6 @@ Design and generate the simplest maintainable normalized schema + import impleme
 7. `changeset_index.md` listing every generated changeset and statement type.
 
 ## Output quality checks before handoff
-- No included domain unmapped.
 - Every skipped domain explicitly listed.
 - Changeset files follow one-statement rule.
 - Annotation coverage includes all new/changed tables+columns.

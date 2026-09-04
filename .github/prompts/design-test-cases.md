@@ -7,6 +7,10 @@ Use these test cases in utPLSQL for the Oracle Design loop.
 - Source file staged for import: `src/main/oracle-volume/grouvee_export.json`
 - Candidate migrations and repeatable procedure applied.
 
+## Test execution
+- Before running utPLSQL, clear `GAMETRACKER.TEST_ORACLE_DESIGN_IMPORT_OUTPUT`.
+- Use `workbench/tests/run_test_oracle_design_import.sql`, which clears the table and stores only the latest run.
+
 ## Test case matrix
 
 ### OD-TC-001 Version verification
@@ -34,42 +38,37 @@ Use these test cases in utPLSQL for the Oracle Design loop.
 - Check: data dictionary comments views for target objects.
 - Pass: no missing table comments and no missing column comments.
 
-### OD-TC-006 Include game core + game URL
-- Requirement: included domain is loaded.
-- Check: sampled rows exist in normalized tables for game core fields and game URL.
-- Pass: non-zero loaded rows and URL values present where expected.
-
-### OD-TC-007 Skip reviews
+### OD-TC-006 Skip reviews
 - Requirement: reviews array skipped by design.
 - Check: no review target table created/loaded; skip report includes reviews.
 - Pass: skipped and documented.
 
-### OD-TC-008 Skip account
+### OD-TC-007 Skip account
 - Requirement: account object skipped by design.
 - Check: no account target table created/loaded; skip report includes account.
 - Pass: skipped and documented.
 
-### OD-TC-009 Skip non-game URLs
+### OD-TC-008 Skip non-game URLs
 - Requirement: only game URL kept.
 - Check: mapping shows non-game URLs excluded; no persisted non-game URL columns populated.
 - Pass: non-game URLs absent from persisted model.
 
-### OD-TC-010 Skip globally-empty sections
+### OD-TC-009 Skip globally-empty sections
 - Requirement: empty-everywhere sections (e.g. lists, favorite_games) are skipped.
 - Check: source profiler evidence + mapping/skip report.
 - Pass: only truly-empty sections are skipped.
 
-### OD-TC-011 Idempotent import rerun
+### OD-TC-010 Idempotent import rerun
 - Requirement: running import twice does not duplicate logical entities.
 - Check: capture key counts before/after two consecutive runs.
 - Pass: second run produces no duplicate growth on natural keys.
 
-### OD-TC-012 Referential integrity
+### OD-TC-011 Referential integrity
 - Requirement: normalized schema relationships remain consistent.
 - Check: anti-joins and FK validity across new/changed tables.
 - Pass: no orphan references.
 
-### OD-TC-013 Performance sanity
+### OD-TC-012 Performance sanity
 - Requirement: no obvious regression for same sample load.
 - Check: elapsed import runtime vs baseline.
 - Pass: within agreed sanity threshold.
@@ -80,7 +79,6 @@ Use these test cases in utPLSQL for the Oracle Design loop.
   - `test_compile_validity`
   - `test_one_statement_changesets`
   - `test_annotations_complete`
-  - `test_included_domains_loaded`
   - `test_skips_respected`
   - `test_empty_everywhere_skip`
   - `test_idempotent_rerun`

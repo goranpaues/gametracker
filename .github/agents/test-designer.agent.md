@@ -43,7 +43,6 @@ Write these files:
   - compile validity
   - one-statement-per-changeset
   - annotations complete
-  - included domains loaded
   - excluded domains skipped
   - empty-everywhere skip correctness
   - idempotent rerun

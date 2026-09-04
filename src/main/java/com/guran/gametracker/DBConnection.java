@@ -52,7 +52,6 @@ public class DBConnection {
 
                 Flyway flyway = new Flyway();
                 flyway.setDataSource(ods);
-                flyway.setTable("SCHEMA_VERSION");
                 flyway.migrate();
 
                 connection = ods.getConnection();

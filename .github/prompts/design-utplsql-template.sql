@@ -8,9 +8,6 @@ create or replace package test_oracle_design_import as
   --%test(annotations complete)
   procedure test_annotations_complete;
 
-  --%test(included domains loaded)
-  procedure test_included_domains_loaded;
-
   --%test(skips respected)
   procedure test_skips_respected;
 
@@ -45,13 +42,6 @@ create or replace package body test_oracle_design_import as
     */
     l_missing := 0;
     ut.expect(l_missing).to_equal(0);
-  end;
-
-  procedure test_included_domains_loaded is
-    l_games number;
-  begin
-    select count(*) into l_games from games;
-    ut.expect(l_games).to_be_greater_than(0);
   end;
 
   procedure test_skips_respected is

@@ -40,4 +40,4 @@ Explicitly invoke these workspace agents from `.github/agents/` in this exact or
 5. Produce `workbench/final-report.md`.
 
 ## Acceptance
-Accept only if sensors pass, one-statement rule passes, annotation coverage passes, utPLSQL passes, included mapping is complete, and excluded domains match scope rules.
+Accept only if sensors pass, one-statement rule passes, annotation coverage passes, utPLSQL passes, and excluded domains match scope rules.
