@@ -2,7 +2,7 @@
 echo "NOTE: Java needs to be installed for this script to succeed!"
 
 echo Setting sys password...
-docker exec oracledb-slim resetPassword SystemSYS123456#
+docker exec oracledb-harness-copilot resetPassword SystemSYS123456#
 
 echo "Downloading sqlcl..."
 curl -Lk "https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip" -o sqlcl.zip
@@ -17,4 +17,4 @@ curl -Lk "${UTPLSQL_DOWNLOAD_URL}" -o utPLSQL.zip
 unzip -q utPLSQL.zip
 
 echo "Starting installation of utPLSQL..."
-./sqlcl/bin/sql -s sys/SystemSYS123456#@localhost:1521/FREEPDB1 as sysdba @utPLSQL/source/install_headless.sql utplsql utplsql gametracker
+./sqlcl/bin/sql -s sys/SystemSYS123456#@localhost:1523/FREEPDB1 as sysdba @utPLSQL/source/install_headless.sql utplsql utplsql gametracker

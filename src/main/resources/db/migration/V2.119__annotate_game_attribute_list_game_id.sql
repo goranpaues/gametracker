@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attribute_list MODIFY (game_id ANNOTATIONS (UI_Display 'Game ID', Description 'References the related game.'));

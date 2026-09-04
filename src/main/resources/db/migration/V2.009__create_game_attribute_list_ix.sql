@@ -1,0 +1,1 @@
+CREATE INDEX gametracker.game_attribute_list_ix ON gametracker.game_attribute_list(attribute_id);

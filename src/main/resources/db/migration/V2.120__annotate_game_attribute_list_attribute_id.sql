@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attribute_list MODIFY (attribute_id ANNOTATIONS (UI_Display 'Attribute ID', Description 'References the related normalized game attribute value.'));

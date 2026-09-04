@@ -18,7 +18,7 @@ Make sure that you look at the commits, as they are very thorough and educationa
  
 ## Creating and running the demo database locally
 
-Oracle 26i is used to explore the JSON to Relational duality feature for importing games!
+Oracle 26i is used to explore the latest functionalities, like the JSON to Relational duality views!
 
 1. Install a Java JDK of your choice if not already installed.
 2. Download Docker Desktop on your machine from [docker.com](http://www.docker.com/products/docker) ann install.
@@ -33,12 +33,12 @@ Log in with your favourite client using the following details:
 Username: gametracker
 Password: gametracker
 Hostname: localhost
-Port: 1521
+Port: 1523
 Service name: FREEPDB1
 ```
 For example qith sqlcl from the terminal (which should now be installed): 
 
-`sql gametracker/gametracker@//localhost:1521/ORCLPDB1`.
+`sql gametracker/gametracker@//localhost:1523/ORCLPDB1`.
 
 ## Resources
 * [Flyway by Redgate](https://flywaydb.org)

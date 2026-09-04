@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.shelf_list ANNOTATIONS (UI_Display 'Shelf List', Description 'Associates games with collection shelves, including the Grouvee add timestamp and optional shelf order.');

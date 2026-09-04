@@ -38,3 +38,6 @@ src/main/*.zip
 
 ### Local Agent Workbench ###
 workbench/
+
+### Class files from VS Code Agent ###
+bin/

@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.games MODIFY (igdb_id ANNOTATIONS (UI_Display 'IGDB ID', Description 'Optional IGDB identifier from the Grouvee collection export.'));

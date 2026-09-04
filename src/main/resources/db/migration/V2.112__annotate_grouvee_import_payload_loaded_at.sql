@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.grouvee_import_payload MODIFY (loaded_at ANNOTATIONS (UI_Display 'Loaded At', Description 'Timestamp when the Grouvee export payload was last staged.'));

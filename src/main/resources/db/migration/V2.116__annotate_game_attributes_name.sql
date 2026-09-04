@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attributes MODIFY (name ANNOTATIONS (UI_Display 'Name', Description 'Display name of the normalized game attribute value.'));

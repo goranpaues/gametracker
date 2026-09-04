@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.grouvee_import_payload MODIFY (source_name ANNOTATIONS (UI_Display 'Source Name', Description 'Stable logical name of the staged Grouvee export source.'));

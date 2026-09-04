@@ -8,5 +8,7 @@ import java.util.List;
 public interface ChartDataDAO {
     public List<ChartData> getPlatformChart();
 
-    public List<ChartData> getLastYearChart();
+    public List<ChartData> getRatingChart();
+
+    public List<ChartData> getShelfChart();
 }

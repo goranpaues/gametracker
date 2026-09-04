@@ -14,7 +14,7 @@ public class MockPlatformChart {
 
     static {
 
-        String jsonString = "[{\"label\":\"PS3\",\"value\":\"442\"},{\"label\":\"iPad\",\"value\":\"57\"},{\"label\":\"PC\",\"value\":\"449\"}]";
+        String jsonString = "[{\"category\":\"PS3\",\"amount\":\"442\"},{\"category\":\"iPad\",\"amount\":\"57\"},{\"category\":\"PC\",\"amount\":\"449\"}]";
 
         try {
 
@@ -32,7 +32,7 @@ public class MockPlatformChart {
 
     private MockPlatformChart(){}
 
-    public static CopyOnWriteArrayList getInstance(){
+    public static CopyOnWriteArrayList<ChartData> getInstance(){
         return eList;
     }
 

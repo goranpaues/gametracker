@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.games MODIFY (level_of_completion ANNOTATIONS (UI_Display 'Level of Completion', Description 'Highest available Grouvee level-of-completion value captured from the collection play summary.'));

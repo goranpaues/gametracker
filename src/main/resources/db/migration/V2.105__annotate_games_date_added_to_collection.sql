@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.games MODIFY (date_added_to_collection ANNOTATIONS (UI_Display 'Date Added to Collection', Description 'Date the game was added to the Grouvee collection.'));

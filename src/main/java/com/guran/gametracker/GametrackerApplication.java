@@ -14,7 +14,7 @@ public class GametrackerApplication {
 	public static final Properties myProps = new Properties();
 
 	static {
-		host = Optional.ofNullable(System.getenv("HOSTNAME"));
+		host = Optional.ofNullable(System.getenv("APP_HOST"));
 		port = Optional.ofNullable(System.getenv("PORT"));
 	}
 

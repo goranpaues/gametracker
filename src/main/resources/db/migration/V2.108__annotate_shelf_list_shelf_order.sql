@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.shelf_list MODIFY (shelf_order ANNOTATIONS (UI_Display 'Shelf Order', Description 'Optional Grouvee order value within the shelf for the game.'));
