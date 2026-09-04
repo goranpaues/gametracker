@@ -1,8 +1,5 @@
 # Gametracker Oracle agent instructions (Oracle Design)
 
-## Objective
-Load `src/main/oracle-volume/grouvee_export.json` into a normalized Oracle schema using the simplest approach that is easy to maintain.
-
 ## Skill usage
 - Use relevant Oracle skills in this workspace as input.
 
@@ -17,12 +14,6 @@ Load `src/main/oracle-volume/grouvee_export.json` into a normalized Oracle schem
 - Collection/game data needed for normalized tracking.
 - Game URL only (from URL fields).
 - Other sections only when they contain non-empty values and add clear business value.
-
-### Exclude by design
-- `reviews` collection array.
-- `account` object.
-- All URLs except game URL.
-- Values/sections empty everywhere in the source sample (for example `lists`, `favorite_games` when globally empty).
 
 ## Schema/migration policy
 - Keep schema changes minimal and normalized.
