@@ -24,12 +24,6 @@ Load `src/main/oracle-volume/grouvee_export.json` into a normalized Oracle schem
 - All URLs except game URL.
 - Values/sections empty everywhere in the source sample (for example `lists`, `favorite_games` when globally empty).
 
-## Data ingestion policy
-- Use direct JSON ingestion:
-  - raw JSON staging payload
-  - JSON_TABLE / JSON_VALUE / JSON_QUERY for projection
-  - set-based MERGE/INSERT logic
-
 ## Schema/migration policy
 - Keep schema changes minimal and normalized.
 - Reuse existing tables where practical.
