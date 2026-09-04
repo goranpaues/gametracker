@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.games MODIFY (review_title ANNOTATIONS (UI_Display 'Review Title', Description 'Optional review title from the Grouvee collection entry.'));

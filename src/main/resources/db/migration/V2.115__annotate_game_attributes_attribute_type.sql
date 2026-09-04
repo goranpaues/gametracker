@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attributes MODIFY (attribute_type ANNOTATIONS (UI_Display 'Attribute Type', Description 'Attribute domain for the value: GENRE, FRANCHISE, SERIES, DEVELOPER, or PUBLISHER.'));

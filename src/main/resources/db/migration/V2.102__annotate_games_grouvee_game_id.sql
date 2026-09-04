@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.games MODIFY (grouvee_game_id ANNOTATIONS (UI_Display 'Grouvee Game ID', Description 'Stable Grouvee game identifier used as the primary import merge key.'));

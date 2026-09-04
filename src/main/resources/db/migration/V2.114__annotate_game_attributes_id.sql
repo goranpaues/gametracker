@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attributes MODIFY (id ANNOTATIONS (SurrogateKey, UI_Display 'Attribute ID', Description 'Surrogate key for a normalized game attribute value.'));

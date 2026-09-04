@@ -1,0 +1,1 @@
+DROP INDEX gametracker.game_name_ux;

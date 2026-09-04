@@ -22,7 +22,7 @@ public class DBConnection {
     //Local settings
     public static final String LOCAL_USERNAME = "gametracker";
     public static final String LOCAL_PASSWORD = "gametracker";
-    public static final String LOCAL_DEFAULT_CONNECT_DESCRIPTOR = "localhost:1521/FREEPDB1";
+        public static final String LOCAL_DEFAULT_CONNECT_DESCRIPTOR = "localhost:1523/FREEPDB1";
 
     private static Connection connection = null;
     private static DBConnection instance = null;

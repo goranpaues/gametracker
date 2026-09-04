@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.grouvee_import_payload ANNOTATIONS (UI_Display 'Grouvee Import Payload', Description 'Technical staging table that stores the Grouvee export payload for set-based JSON import processing.');

@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attribute_list MODIFY (last_updated ANNOTATIONS (UI_Display 'Last Updated', Description 'Timestamp when the game-to-attribute association was last refreshed.'));

@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attributes MODIFY (last_updated ANNOTATIONS (UI_Display 'Last Updated', Description 'Timestamp when the attribute row was last created or refreshed.'));

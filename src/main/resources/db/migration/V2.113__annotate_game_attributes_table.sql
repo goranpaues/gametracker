@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attributes ANNOTATIONS (UI_Display 'Game Attributes', Description 'Lookup table for normalized Grouvee game attributes such as genres, franchises, series, developers, and publishers.');

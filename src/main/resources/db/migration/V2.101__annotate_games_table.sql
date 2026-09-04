@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.games ANNOTATIONS (UI_Display 'Games', Description 'Core game collection table imported from Grouvee collection entries, retaining only the game URL among imported URL fields.');

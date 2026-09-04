@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX gametracker.game_grouvee_game_id_ux ON gametracker.games(grouvee_game_id);

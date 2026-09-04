@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.grouvee_import_payload MODIFY (payload ANNOTATIONS (UI_Display 'Payload', Description 'JSON payload loaded from the Grouvee export file and consumed by the import procedure.'));

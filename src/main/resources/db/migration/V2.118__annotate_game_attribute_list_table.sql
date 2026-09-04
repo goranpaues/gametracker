@@ -1,0 +1,1 @@
+ALTER TABLE gametracker.game_attribute_list ANNOTATIONS (UI_Display 'Game Attribute List', Description 'Associates games with normalized Grouvee game attributes.');

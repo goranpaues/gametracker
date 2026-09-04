@@ -1,0 +1,1 @@
+CREATE OR REPLACE DIRECTORY grouvee_json_dir AS '/opt/oracle/oradata';
