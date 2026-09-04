@@ -27,7 +27,7 @@ Exclude:
 
 ## Hard constraints
 1. Flyway changesets must have exactly one SQL statement per file.
-2. Do not use COMMENT ON TABLE / COMMENT ON COLUMN for annotations; use ANNOTATIONS keyword instead. See https://oracle-base.com/articles/23/annotations-23 for guidance.
+2. Do not use COMMENT ON TABLE / COMMENT ON COLUMN for annotations; use ANNOTATIONS keyword instead. See [official documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/adfns/registering-application-data-usage-database.html#GUID-DB44028D-685C-4AC7-8129-05E6C01E69C5) for guidance.
 3. Use SurrogateKey, UI_Display and Description ANNOTATIONS where it makes sense to have them. Example: ID NUMBER ANNOTATIONS (SurrogateKey, UI_Display 'Game ID', Description 'Primary key for the games table').
 4. Ensure all mandatory columns have appropriate ANNOTATIONS.
 

@@ -52,6 +52,7 @@ public class DBConnection {
 
                 Flyway flyway = new Flyway();
                 flyway.setDataSource(ods);
+                flyway.setSchemas("GAMETRACKER");
                 flyway.migrate();
 
                 connection = ods.getConnection();
