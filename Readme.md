@@ -21,7 +21,11 @@ Oracle 26i is used to explore the latest functionalities, like the JSON to Relat
 
 1. Install a Java JDK of your choice if not already installed.
 2. Download Docker Desktop on your machine from [docker.com](http://www.docker.com/products/docker) and install. Alternatively Podman can be used.
-3. Go to directory src/main and run ./start.sh. The latest slim image of oracle will be pulled and started. Users utplsql and gametracker will be created in the PDB.
+3. Go to directory src/main and run 
+```
+./start.sh. 
+```
+The latest slim image of oracle will be pulled and started. Users utplsql and gametracker will be created in the PDB.
 4. Open a new terminal window. Go to src/main folder and run the following script to install SQLcl, skills and utPLSQL as well as copying grouvee_export.json to the Oracle directory:
 ```
 ./initialize_environment.sh
