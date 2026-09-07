@@ -2,7 +2,7 @@
 echo "NOTE: Java needs to be installed for this script to succeed!"
 echo "NOTE: Ensure that the Oracle Docker image has been installed by the start.sh script"
 
-echo Restarting database for a clean start...
+echo Restarting database just in case...
 docker stop oracledb-harness-copilot
 docker start oracledb-harness-copilot
 
