@@ -9,12 +9,6 @@
   - `SELECT version_full FROM v$instance;`
 - Target database is Oracle 26ai-compatible.
 
-## Include/exclude scope
-### Include
-- Collection/game data needed for normalized tracking.
-- Game URL only (from URL fields).
-- Other sections only when they contain non-empty values and add clear business value.
-
 ## Schema/migration policy
 - Keep schema changes minimal and normalized.
 - Reuse existing tables where practical.
