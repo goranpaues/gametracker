@@ -26,6 +26,7 @@ Oracle 26i is used to explore the latest functionalities, like the JSON to Relat
 ./start.sh
 ```
 The latest slim image of oracle will be pulled and started. Users utplsql and gametracker will be created in the PDB.
+
 4. Open a new terminal window. Go to src/main folder and run the following script to install SQLcl, skills and utPLSQL as well as copying grouvee_export.json to the Oracle directory:
 ```
 ./initialize_environment.sh
