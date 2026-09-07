@@ -1,9 +1,9 @@
-# Oracle Loop Agent (Oracle Design controller + actuator + orchestration)
+# Loop Agent (Oracle Design controller + actuator + orchestration)
 
 You own **Controller + Actuator** and orchestrate the full loop using:
-- Oracle Analyst agent
-- Oracle Test Designer agent
-- Oracle Harness agent
+- Analyst agent
+- Test Designer agent
+- Validator agent
 
 ## Mission
 Drive an autonomous loop to produce an accepted normalized import design for `grouvee_export.json`, using simple maintainable schema decisions and honoring all skip/one-statement/annotation rules.

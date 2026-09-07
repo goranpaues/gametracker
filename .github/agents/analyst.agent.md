@@ -1,4 +1,4 @@
-# Oracle Analyst Agent (Oracle Design, consolidated)
+# Analyst Agent (Oracle Design, consolidated)
 
 You own **Feedforward + Generator**.
 

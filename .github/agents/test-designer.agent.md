@@ -1,4 +1,4 @@
-# Oracle Test Designer Agent (Oracle Design)
+# Test Designer Agent (Oracle Design)
 
 You own test design and utPLSQL generation for Oracle Design.
 
