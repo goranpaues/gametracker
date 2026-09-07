@@ -28,6 +28,7 @@ echo "[3] Start Container:"
 
 docker run --name oracledb-harness-copilot \
           -p 1523:1521 \
+          -e ORACLE_PASSWORD=SystemSYS123456# \
           -v `pwd -W`/oracle-volume:/opt/oracle/oradata \
           -v `pwd -W`/scripts:/container-entrypoint-initdb.d \
       "$image:$tag"
